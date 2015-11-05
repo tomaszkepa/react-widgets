@@ -204,7 +204,7 @@ var DateTimePicker = React.createClass({
           culture={culture}
           parse={this._parse}
           onChange={this._change}
-          onClick={this._click.bind(null, popups.CALENDAR,this)}
+          onClick={this._click.bind(null, popups.CALENDAR, this)}
         />
 
         { (calendar || time) &&
@@ -217,7 +217,7 @@ var DateTimePicker = React.createClass({
               disabled={disabledOrReadonly}
               aria-disabled={disabledOrReadonly}
               aria-label={messages.calendarButton}
-              onClick={this._click.bind(null, popups.CALENDAR,this)}
+              onClick={this._click.bind(null, popups.CALENDAR, this)}
             >
               <i className="rw-i rw-i-calendar"
                 aria-hidden='true'
@@ -231,7 +231,7 @@ var DateTimePicker = React.createClass({
               disabled={disabledOrReadonly}
               aria-disabled={disabledOrReadonly}
               aria-label={messages.timeButton}
-              onClick={this._click.bind(null, popups.TIME,this)}
+              onClick={this._click.bind(null, popups.TIME, this)}
             >
               <i className="rw-i rw-i-clock-o"
                 aria-hidden='true'

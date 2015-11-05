@@ -2,7 +2,13 @@
 .rw-datetimepicker {
   .rw-btn {
     width: 1.8em;
-  } 
+    &.rw-btn-disable {
+      cursor: default;
+      &:hover {
+        background: initial;
+      }
+    }
+  }
 
   &.rw-has-neither {
     padding-left: 0;
@@ -16,7 +22,7 @@
   &.rw-has-both {
     padding-right: 3.8em;
 
-    &.rw-rtl { 
+    &.rw-rtl {
       padding-right: 0;
       padding-left: 3.8em;
     }
@@ -24,10 +30,9 @@
 
   &.rw-has-both > .rw-select {
     width: 3.8em;
-    height: 100%; 
+    height: 100%;
   }
 }
-
 
 .rw-calendar {
   background-color: @widget-bg;
@@ -37,11 +42,11 @@
   }
 
   .rw-btn {
-    
+
   }
   .rw-header {
     padding-bottom: 5px;
-    
+
     .rw-btn-left,
     .rw-btn-right {
       width: 12.5%;
@@ -49,8 +54,8 @@
 
     .rw-btn-view {
       width: 75%;
-      background-color:   @gray-lighter;
-      border-radius:      @input-border-radius;
+      background-color: @gray-lighter;
+      border-radius: @input-border-radius;
 
       &[disabled] {
         .state-disabled()
@@ -60,13 +65,13 @@
 
   .rw-footer {
     border-top: 1px solid @input-border;
-    
+
     .rw-btn {
       width: 100%;
       white-space: normal;
-      
+
       &:hover {
-        background-color:   @state-bg-hover;
+        background-color: @state-bg-hover;
       }
 
       &[disabled] {
@@ -76,7 +81,6 @@
   }
 }
 
-
 .rw-calendar-grid {
   height: 200 / 14em;
   table-layout: fixed;
@@ -84,7 +88,7 @@
 
   th {
     text-align: right;
-    padding:    0 .4em 0 .1em;
+    padding: 0 .4em 0 .1em;
   }
 
   .rw-btn {
@@ -99,7 +103,7 @@
       outline: 0;
 
       &:hover {
-        background-color:   @state-bg-hover;
+        background-color: @state-bg-hover;
       }
 
       &.rw-off-range {

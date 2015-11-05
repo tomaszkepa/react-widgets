@@ -494,6 +494,12 @@ ul.rw-list.rw-list-grouped > li.rw-list-option,
 .rw-datetimepicker .rw-btn {
   width: 1.8em;
 }
+.rw-datetimepicker .rw-btn.rw-btn-disable {
+  cursor: default;
+}
+.rw-datetimepicker .rw-btn.rw-btn-disable:hover {
+  background: initial;
+}
 .rw-datetimepicker.rw-has-neither {
   padding-left: 0;
   padding-right: 0;
