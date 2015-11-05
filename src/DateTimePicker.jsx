@@ -66,6 +66,7 @@ let propTypes = {
     disabled:       CustomPropTypes.disabled,
     readOnly:       CustomPropTypes.readOnly,
     autoFocus:      React.PropTypes.bool,
+    inputOpen:      React.PropTypes.bool,
 
     parse:          React.PropTypes.oneOfType([
                       React.PropTypes.arrayOf(React.PropTypes.string),
@@ -120,6 +121,7 @@ var DateTimePicker = React.createClass({
       calendar:         true,
       time:             true,
       open:             false,
+      inputOpen:        false,
 
       //calendar override
       footer:           true,
@@ -202,6 +204,7 @@ var DateTimePicker = React.createClass({
           culture={culture}
           parse={this._parse}
           onChange={this._change}
+          onClick={this._click.bind(null, popups.CALENDAR,this)}
         />
 
         { (calendar || time) &&
@@ -214,7 +217,7 @@ var DateTimePicker = React.createClass({
               disabled={disabledOrReadonly}
               aria-disabled={disabledOrReadonly}
               aria-label={messages.calendarButton}
-              onClick={this._click.bind(null, popups.CALENDAR)}
+              onClick={this._click.bind(null, popups.CALENDAR,this)}
             >
               <i className="rw-i rw-i-calendar"
                 aria-hidden='true'
@@ -228,7 +231,7 @@ var DateTimePicker = React.createClass({
               disabled={disabledOrReadonly}
               aria-disabled={disabledOrReadonly}
               aria-label={messages.timeButton}
-              onClick={this._click.bind(null, popups.TIME)}
+              onClick={this._click.bind(null, popups.TIME,this)}
             >
               <i className="rw-i rw-i-clock-o"
                 aria-hidden='true'
@@ -385,7 +388,10 @@ var DateTimePicker = React.createClass({
   },
 
   @widgetEditable
-  _click(view, e){
+  _click(view, e, el){
+    if ((!this.props.inputOpen || this.props.value) && el.target.tagName === 'INPUT') {
+        return;
+    }
     this.focus()
     this.toggle(view, e)
   },

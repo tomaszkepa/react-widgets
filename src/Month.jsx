@@ -94,7 +94,17 @@ let MonthView = React.createClass({
           var currentID = optionId(id, day);
 
           return !dates.inRange(day, min, max)
-              ? <td  key={'day_' + colIdx} role='presentation' className='rw-empty-cell'>&nbsp;</td>
+              ? <td  key={'day_' + colIdx} role='presentation' className='rw-empty-cell'>
+                            <span
+                                className={cn('rw-btn rw-btn-disable')}
+                                >
+                    {
+                      Day
+                          ? <Day date={day} label={date}/>
+                          : date
+                    }
+                  </span>
+                </td>
               : (
                 <td
                   key={'day_' + colIdx}
