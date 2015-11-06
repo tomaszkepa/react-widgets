@@ -496,6 +496,7 @@ ul.rw-list.rw-list-grouped > li.rw-list-option,
 }
 .rw-datetimepicker .rw-btn.rw-btn-disable {
   cursor: default;
+  opacity: .5;
 }
 .rw-datetimepicker .rw-btn.rw-btn-disable:hover {
   background: initial;
